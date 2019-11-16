@@ -1,0 +1,45 @@
+//between two classes
+
+#include<iostream>
+#include<conio.h>
+class two;//must write here
+using namespace std;
+class one{
+int num;
+public:
+one(){
+num=5;
+}
+void display(){
+cout<<"one="<<num;
+}
+friend void swp(one &obj1,two &obj2);
+};
+
+class two{
+int num;
+public:
+    two(){
+    num=9;
+    }
+    void display(){
+cout<<"two="<<num;
+}
+friend void swp(one &obj1,two &obj2);
+};
+
+void swp(one &obj1,two &obj2){
+int temp;
+temp=obj1.num;
+obj1.num=obj2.num;
+obj2.num=temp;
+}
+
+int main(){
+one o1;
+two o2;
+swp(o1,o2);
+o1.display();
+o2.display();
+return 0;
+}
