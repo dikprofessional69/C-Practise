@@ -1,0 +1,26 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class one{
+static int x;
+public:
+
+    void display(){
+    cout<<x;
+    }
+    void update(){
+    x++;
+    }
+
+};
+int one::x=5;//initialization outside for static cant be initialized in class
+
+int main(){
+one obj1;
+one obj2;
+obj1.update();
+obj2.update();
+obj1.display();
+getch();
+return 0;
+}
