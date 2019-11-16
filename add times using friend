@@ -1,0 +1,48 @@
+#include<iostream>
+#include<conio.h>
+
+using namespace std;
+
+class one{
+int hr;
+int m;
+int sec;
+public:
+friend one addtime(one obj1,one obj2);
+void gettime();
+void display(){
+cout<<hr<<"and"<<m<<"and"<<sec;
+}
+};
+
+void one::gettime(){
+cout<<"enter time";
+cin>>hr;
+cin>>m;
+cin>>sec;
+}
+
+one addtime(one obj1,one obj2){
+one t;
+t.hr=obj1.hr+obj2.hr;
+t.m=obj1.m+obj2.m;
+t.sec=obj1.sec+obj2.sec;
+if(t.sec>=60){//greater than equal
+t.m++;
+t.sec-=60;
+}
+if(t.m>=60){
+    t.hr++;
+    t.m-=60;
+}
+return t;
+}
+int main(){
+one obj1,obj2,collector;
+obj1.gettime();
+obj2.gettime();
+collector=addtime(obj1,obj2);
+collector.display();
+getch();
+return 0;
+}
