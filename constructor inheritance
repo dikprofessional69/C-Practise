@@ -1,0 +1,53 @@
+#include <iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+class college{
+char cname[50];
+char address[100];
+public:
+    college(char *c,char *a){//in c++ always string parameters like this
+    strcpy(cname,c);
+    strcpy(address,a);
+    cout<<cname<<endl<<address<<endl;
+    }
+};
+class student:virtual public college{//virtual needed even when no same function for ???? reasons
+char sname[100];
+int roll;
+public:
+   student(char *s,int r,char *c,char *a):college(c,a)
+       {
+strcpy(sname,s);
+roll=r;
+cout<<sname<<endl<<roll<<endl;
+}
+};
+
+class teacher:virtual public college{
+char tname[100];
+int tcode;
+public:
+    teacher(char *t,int tn,char *c,char *a):college(c,a){
+        strcpy(tname,t);
+        tcode=tn;
+        cout<<tname<<endl<<tn<<endl;
+    }
+};
+
+class book:public student,public teacher{
+char bookname[100];
+char writername[100];
+int bcode;
+public:
+    book(char *b,char *w,int bn,char *t,int tn,char *s,int r,char *c,char *a):college(c,a),student(s,r,c,a),teacher(t,tn,c,a){
+    strcpy(bookname,b);
+    strcpy(writername,w);
+    bcode=bn;
+    cout<<bookname<<endl<<writername<<endl<<bcode<<endl;
+    }
+};
+int main(){
+book obj("philosophers stone","JK Rowlng",18967,"Mcgonaical",98,"Harry potter",178,"Hogwarts","Brighon");
+
+}
