@@ -1,0 +1,25 @@
+#include <iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+
+class one{
+static int x;
+public:
+    static void displaycount(){//static function a function that can access static variables
+    cout<<"Static Variable value"<<x;
+    }
+    void updatex(){
+    x++;
+    }
+};
+
+int one::x=5;
+
+int main(){
+one obj1,obj2;
+obj1.updatex();
+obj2.updatex();
+one::displaycount();//static function accessed through class name not object.
+return 0;
+}
