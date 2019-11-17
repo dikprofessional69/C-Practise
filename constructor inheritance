@@ -12,8 +12,8 @@ public:
     cout<<cname<<endl<<address<<endl;
     }
 };
-class student:virtual public college{//virtual needed even when no same function for ???? reasons
-char sname[100];
+class student:virtual public college{//virtual needed even when no same function for 2 intermediate constructors sending their 
+char sname[100];                     // values twice to base class constructor
 int roll;
 public:
    student(char *s,int r,char *c,char *a):college(c,a)
