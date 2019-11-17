@@ -1,0 +1,27 @@
+#include <iostream>
+#include<conio.h>
+using namespace std;
+class one{
+int x;
+public:
+    one(int a){
+    x=a;
+    cout<<"X="<<x<<endl;
+    }
+
+};
+class two:public one{
+int y;
+public:
+    two(int p,int q):one(p){//can send p also to base class constructor
+    y=q;
+   cout<<"Y="<<y<<endl;
+    }
+
+};
+
+int main(){
+two obj(5,6);
+return 0;
+
+}
