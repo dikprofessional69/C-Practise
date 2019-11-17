@@ -1,0 +1,34 @@
+#include <iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+//pure virtual function
+class number{
+int a;
+int b;
+public:
+    void getnumber(){
+    cout<<"the real:";
+    cin>>a;
+    cout<<endl<<"the imaginary";
+    cin>>b;
+    }
+    void out(){
+    cout<<endl<<a<<"+i"<<b;
+    }
+    void add(number x,number y){
+    a=x.a+y.a;
+    b=x.b+y.b;
+    }
+
+};
+
+int main(){
+number num1,num2,num3;
+num1.getnumber();
+num2.getnumber();
+num3.add(num1,num2);
+num3.out();
+return 0;
+
+}
