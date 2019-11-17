@@ -1,0 +1,36 @@
+#include <iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+
+class number{
+int a;
+int b;
+public:
+    void getnumber(){
+    cout<<"the real:";
+    cin>>a;
+    cout<<endl<<"the imaginary";
+    cin>>b;
+    }
+    void out(){
+    cout<<endl<<a<<"+i"<<b;
+    }
+    number add(number x,number y){
+    number obj;
+    obj.a=x.a+y.a;
+    obj.b=x.b+y.b;
+    return obj;
+    }
+
+};
+
+int main(){
+number num1,num2,num3;
+num1.getnumber();
+num2.getnumber();
+num3=num1.add(num1,num2);
+num3.out();
+return 0;
+
+}
