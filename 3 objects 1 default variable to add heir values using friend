@@ -1,0 +1,77 @@
+//between two classes
+
+
+
+#include<iostream>
+
+#include<conio.h>
+
+class two;
+class three;//must write here
+
+using namespace std;
+
+class one{
+
+int num;
+
+public:
+
+one(){
+
+num=5;
+
+}
+
+friend void great(one obj1,two obj2,three obj3,int z);
+
+};
+
+
+
+class two{
+
+int num;
+
+public:
+
+    two(){
+
+    num=9;
+
+    }
+
+friend void great(one obj1,two obj2,three obj3,int z);
+
+};
+class three{
+int num;
+public:
+three(){
+num=4;
+}
+friend void great(one obj1,two obj2,three obj3,int z);yesto ma  = 9 na rakhne 
+};
+
+
+
+void great(one obj1,two obj2,three obj3,int z=9){ only here put =9
+int sum;
+sum=obj1.num+obj2.num+obj3.num+z;
+cout<<"the sum is"<<sum;
+}
+
+
+
+int main(){
+
+one o1;
+
+two o2;
+
+three o3;
+great(o1,o2,o3);
+
+return 0;
+
+}
