@@ -1,0 +1,77 @@
+#include <iostream>
+#include<conio.h>
+using namespace std;
+class student{
+char name[100];
+char address[100];
+public:
+    void getdata();
+    void putdata();
+};
+
+class marks:public virtual student{
+protected:
+int sub1;
+int sub2;
+public:
+    void getmarks();
+    void putmarks();
+};
+
+class sports:public virtual student{
+
+int score;
+public:
+    void getsports();
+    void putsports();
+};
+class result:public sports,public marks{
+int total;
+public:
+    void display();
+};
+
+void student::getdata(){
+cout<<"input name and address"<<endl;
+cin>>name;
+cin>>address;
+}
+void student::putdata(){
+cout<<"the name and address"<<name<<"and"<<address<<endl;
+}
+
+void marks::getmarks(){
+cout<<"enter subject marks"<<endl;
+cin>>sub1;
+cin>>sub2;
+}
+
+void marks::putmarks(){
+cout<<"the marks"<<sub1<<"another"<<sub2<<endl;
+}
+
+void sports::getsports(){
+cout<<"enter score"<<endl;
+cin>>score;
+}
+
+void sports::putsports(){
+cout<<"the score"<<score<<endl;
+}
+
+void result::display(){//must do sub1 and sub 2 protected because
+total=sub1+sub2;//display is using those private not their inherited functions.
+cout <<"the total is "<<total<<endl;
+}
+
+int main(){
+    result r;
+    r.getdata();
+    r.getmarks();
+    r.getsports();
+    r.putdata();
+    r.putmarks();
+    r.putsports();
+    r.display();
+    return 0;
+}
