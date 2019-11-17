@@ -1,0 +1,34 @@
+#include <iostream>
+#include<conio.h>
+using namespace std;
+class one{
+int x;
+public:
+void getx1(){
+cin>>x;
+}
+void putx1(){
+cout<<x<<endl;
+}
+};
+
+class two:public one{
+int x;
+public:
+void getx2(){
+cin>>x;
+}
+    void putx2(){
+    cout<<x<<endl;
+    }
+};
+
+int main(){
+
+two obj;
+obj.getx1();
+obj.getx2();
+obj.putx1();
+obj.putx2();
+return 0;
+}
