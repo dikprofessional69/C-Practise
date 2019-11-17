@@ -1,0 +1,36 @@
+#include <iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+
+class alpha{
+int x;
+public:
+alpha(int b){
+x=b;
+cout<<x;
+}
+};
+
+class beta{
+float y;
+public:
+beta(float a){//here also float carefull
+y=a;
+cout<<y;
+}
+};
+
+class gamma:public alpha,public beta{
+int m,n;
+public:
+    gamma(int x,int y,float p,int q):beta(p),alpha(q){
+    m=x;
+    n=y;
+    cout<<m<<n;
+    }
+};
+
+int main(){
+gamma obj(6,5,9.5,4);//output strats from base class ko constructor
+}
