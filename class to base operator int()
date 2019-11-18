@@ -21,7 +21,7 @@ operator int(){
 int main(){
 one obj;
 int add;
-add=obj;
+add=obj;//add=int(obj) but int never has any aparameters directly uses datamembers of obj.
 cout<<add;
 return 0;
 }
