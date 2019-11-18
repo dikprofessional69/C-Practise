@@ -1,0 +1,20 @@
+class ClassName {
+
+       private:
+         int dataMember;
+
+       public:
+           void method(int a) {
+
+   // this pointer stores the address of object obj and access dataMember
+               this->dataMember = a;
+
+           }
+};
+
+int main() {
+
+    ClassName obj;
+    obj.method(5);
+
+}
