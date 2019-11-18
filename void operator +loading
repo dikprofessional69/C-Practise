@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+class complexx{
+int x;
+int y;
+public:
+    complexx(int a,int b){
+    x=a;
+    y=b ;
+    }
+    complexx(){
+    }
+    void display(){
+    cout<<x<<"+i"<<y;
+    }
+    complexx operator +(complexx obj2);
+};
+complexx complexx::operator +(complexx obj2){
+    complexx objtemp;
+    objtemp.x=x+obj2.x;
+    objtemp.y=y+obj2.y;
+return objtemp;
+    }
+
+int main(){
+complexx collector;
+complexx obj1(5,9);
+complexx obj2(1,5);
+collector=obj1+obj2;//collector=obj1.+(obj2)
+collector.display();
+return 0;
+}
+
+
+
