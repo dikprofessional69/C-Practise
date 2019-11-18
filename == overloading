@@ -1,0 +1,31 @@
+#include <iostream>
+#include<string.h>
+using namespace std;
+//== overloading to compare 2 strings of two objects
+class one{
+char w[100];
+public:
+    one(){
+    }
+    one(char *a){
+    strcpy(w,a);
+    }
+void display(){
+cout<<w;
+}
+friend void operator ==(one obja,one objb){
+    if(strcmp(obja.w,objb.w)==0){
+        cout<<"same word";
+
+
+    }
+else{
+        cout<<"Different words";
+}
+}};
+int main(){
+one obj1("harry");
+one obj2("harry");
+obj1==obj2;//friend so both as argument
+return 0;
+}
