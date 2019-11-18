@@ -1,0 +1,27 @@
+#include<iostream>
+#include<conio.h>
+
+using namespace std;
+//class to base  ie base=claass by datatype overloading
+class one{
+int x;
+int y;
+public:
+    one(){
+    x=5;
+    y=6;
+    }
+operator int(){
+    int ans;
+    ans=x+y;
+    return ans;
+    }
+};
+
+int main(){
+one obj;
+int add;
+add=obj;
+cout<<add;
+return 0;
+}
