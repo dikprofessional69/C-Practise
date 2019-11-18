@@ -1,0 +1,34 @@
+#include <iostream>
+#include<string.h>
+using namespace std;
+//+ overloading to add 2 strings of two objects
+class one{
+char w[100];
+public:
+    one(){
+    }
+    one(char *a){
+    strcpy(w,a);
+    }
+void display(){
+cout<<w;
+}
+friend void operator >(one obja,one objb){
+    if(strlen(obja.w)>strlen(objb.w)){
+        cout<<"first is lobnger";
+
+    }
+    else{
+        cout<<"second is longer";
+
+    }
+}
+};
+int main(){
+one obj1("harry");
+one obj2("hermoine");
+one obj;
+obj1>obj2;
+obj.display();
+return 0;
+}
