@@ -1,0 +1,28 @@
+#include <iostream>
+#include<string.h>
+using namespace std;
+//+ overloading to add 2 strings of two objects
+class one{
+char w[100];
+public:
+    one(){
+    }
+    one(char *a){
+    strcpy(w,a);
+    }
+void display(){
+cout<<w;
+}
+friend one operator +(one obja,one objb){
+    strcat(obja.w,objb.w);
+    return obja;
+}
+};
+int main(){
+one obj1("harry");
+one obj2("harry");
+one obj;
+obj=obj1+obj2;
+obj.display();
+return 0;
+}
