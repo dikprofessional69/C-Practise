@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+class one{
+int x;
+int y;
+int z;
+public:
+    one(){
+    x=1;
+    y=-9;
+    z=10;
+    }
+    void display(){
+    cout<<x<<y<<z;
+    }
+    friend void operator -(one &obj);
+};
+void operator -(one &obj){
+    obj.x=-obj.x;
+    obj.y=-obj.y;
+    obj.z=-obj.z;
+    }
+int main()
+{
+    one obj;
+    -obj;
+    obj.display();
+    return 0;
+}
